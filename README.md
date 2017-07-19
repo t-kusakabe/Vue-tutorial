@@ -1,4 +1,5 @@
 # vue-tutorial
+[Sample Page https://jp.vuejs.org/](https://jp.vuejs.org/)
 
 > A Vue.js project
 
