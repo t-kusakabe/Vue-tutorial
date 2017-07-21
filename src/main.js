@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import MyComponent from './components/MyComponent'
 
 Vue.config.productionTip = false
 
@@ -137,5 +138,45 @@ new Vue({
       { text: 'Two', value: 'B' },
       { text: 'Three', value: 'C' }
     ]
+  }
+})
+
+// component
+Vue.component('my-component', {
+  template: '<div>A custom component!</div>'
+})
+
+var Child = {
+  template: '<div>A custom component child!</div>'
+}
+
+new Vue({
+  el: '#component',
+})
+
+var data = { counter: 0 }
+
+Vue.component('simple-counter', {
+  template: '<button v-on:click="counter += 1">{{ counter }}</button>',
+  data: function() {
+    return {
+      counter: 0
+    }
+  }
+})
+
+new Vue({
+  el: '#component2'
+})
+
+Vue.component('child', {
+  props: ['myMessage'],
+  template: '<span>{{ myMessage }}</span>'
+})
+
+new Vue({
+  el: '#component4',
+  data: {
+    parentMsg: ''
   }
 })

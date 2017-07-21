@@ -101,5 +101,27 @@
       </select>
       <span>Selected: {{ dynSelected }}</span>
     </div>
+    <br>
+
+    <!-- component -->
+    <div id="component">
+      <my-component>
+      </my-component>
+    </div>
+
+    <div id="component2">
+      <simple-counter></simple-counter>
+      <simple-counter></simple-counter>
+      <simple-counter></simple-counter>
+    </div>
+
+    <div id="component3">
+      <child my-message="hello!"></child>
+    </div>
+
+    <div id="component4">
+      <input v-model="parentMsg">
+      <br>
+      <child v-bind:my-message="parentMsg"></child>
   </body>
 </html>
